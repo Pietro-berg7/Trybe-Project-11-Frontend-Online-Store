@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 
 export default class Category extends Component {
   render() {
-    const { name, id } = this.props;
+    const { name, id, fetchCategory } = this.props;
     return (
       <button
         type="button"
         data-testid="category"
         name="category"
         value={ id }
-        // onClick={ HandleClick }
+        onClick={ fetchCategory }
       >
         { name }
       </button>
@@ -21,4 +21,5 @@ export default class Category extends Component {
 Category.propTypes = {
   name: string,
   id: string,
+  fetchCategory: func,
 }.isResquired;

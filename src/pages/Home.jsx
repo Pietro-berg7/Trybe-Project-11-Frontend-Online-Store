@@ -13,13 +13,20 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    this.fetchCategory();
+    this.fetchCategoryButton();
   }
 
-  fetchCategory = async () => {
+  fetchCategoryButton = async () => {
     const result = await getCategories();
     this.setState({
       category: result,
+    });
+  };
+
+  fetchCategory = async ({ target: { value } }) => {
+    const { results } = await getProductsFromCategoryAndQuery(value);
+    this.setState({
+      listProduct: results,
     });
   };
 
@@ -41,7 +48,8 @@ export default class Home extends Component {
     getProductsFromCategoryAndQuery(null, search)
       .then(({ results }) => {
         this.setState({
-          listProduct: results, product: true,
+          listProduct: results,
+          product: true,
         });
       });
   };
@@ -56,6 +64,7 @@ export default class Home extends Component {
               key={ id }
               name={ name }
               id={ id }
+              fetchCategory={ this.fetchCategory }
             />
           ))}
         </aside>
