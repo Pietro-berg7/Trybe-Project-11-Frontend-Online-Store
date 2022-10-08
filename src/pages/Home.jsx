@@ -105,7 +105,7 @@ export default class Home extends Component {
                     to={ `/productdetails/${id}` }
                     data-testid="product-detail-link"
                   >
-                    btn
+                    Detalhes do produto
                   </Link>
                   <p>{title}</p>
                   <img src={ thumbnail } alt={ title } />
