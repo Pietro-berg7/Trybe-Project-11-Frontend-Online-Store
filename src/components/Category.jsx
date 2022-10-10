@@ -6,10 +6,11 @@ export default class Category extends Component {
     const { name, id, fetchCategory } = this.props;
     return (
       <button
+        key={ id }
         type="button"
         data-testid="category"
         name="category"
-        value={ id }
+        value={ name }
         onClick={ fetchCategory }
       >
         { name }

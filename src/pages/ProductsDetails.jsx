@@ -36,7 +36,7 @@ export default class ProductsDetails extends Component {
               </p>
               <img
                 data-testid="product-detail-image"
-                src={ detail.thumbmail }
+                src={ detail.thumbnail }
                 alt={ detail.title }
               />
               <p data-testid="product-detail-price">
