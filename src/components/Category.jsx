@@ -10,7 +10,7 @@ export default class Category extends Component {
         type="button"
         data-testid="category"
         name="category"
-        value={ name }
+        value={ id }
         onClick={ fetchCategory }
       >
         { name }
