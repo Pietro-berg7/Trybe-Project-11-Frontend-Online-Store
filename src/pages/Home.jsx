@@ -10,6 +10,7 @@ export default class Home extends Component {
     category: [],
     product: false,
     search: '',
+    cartItems: [],
   };
 
   componentDidMount() {
@@ -25,8 +26,22 @@ export default class Home extends Component {
 
   fetchCategory = async ({ target: { value } }) => {
     const { results } = await getProductsFromCategoryAndQuery(value);
+    // console.log(value);
     this.setState({
       listProduct: results,
+    });
+  };
+
+  handleAddCart = ({ target: { id } }) => {
+    console.log(id);
+    const { listProduct } = this.state;
+    const addItems = listProduct.find((item) => item.id === id);
+    const { price, title, thumbnail } = addItems;
+    this.setState((previousState) => ({
+      cartItems: [...previousState.cartItems, { price, title, thumbnail }],
+    }), () => {
+      const { cartItems } = this.state;
+      localStorage.setItem('productCart', JSON.stringify(cartItems));
     });
   };
 
@@ -112,8 +127,11 @@ export default class Home extends Component {
                   <p>{price}</p>
                   <button
                     type="submit"
+                    data-testid="product-add-to-cart"
+                    onClick={ this.handleAddCart }
+                    id={ id }
                   >
-                    Adicionar
+                    Adicionar ao Carrinho
                   </button>
                 </li>
               ))}
