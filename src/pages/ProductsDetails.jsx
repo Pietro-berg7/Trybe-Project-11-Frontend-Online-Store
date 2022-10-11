@@ -6,6 +6,7 @@ import { getProductById } from '../services/api';
 export default class ProductsDetails extends Component {
   state = {
     detail: null,
+    cartItems: [],
   };
 
   componentDidMount() {
@@ -14,6 +15,17 @@ export default class ProductsDetails extends Component {
       detail: data,
     }));
   }
+
+  handleAddCart = () => {
+    const { detail } = this.state;
+    const { price, title, thumbnail } = detail;
+    this.setState(({
+      cartItems: [{ price, title, thumbnail }],
+    }), () => {
+      const { cartItems } = this.state;
+      localStorage.setItem('productCart', JSON.stringify(cartItems));
+    });
+  };
 
   render() {
     const { detail } = this.state;
@@ -51,6 +63,13 @@ export default class ProductsDetails extends Component {
               >
                 link
               </a>
+              <button
+                type="submit"
+                data-testid="product-detail-add-to-cart"
+                onClick={ this.handleAddCart }
+              >
+                Adicionar ao Carrinho
+              </button>
             </div>
           ) : <> </>}
       </div>
