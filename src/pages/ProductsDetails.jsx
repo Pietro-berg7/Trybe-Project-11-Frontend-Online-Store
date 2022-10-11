@@ -20,10 +20,10 @@ export default class ProductsDetails extends Component {
     return (
       <div>
         <Link
-          to="/shoppingcart"
+          to="/ShoppingCart"
           data-testid="shopping-cart-button"
         >
-          carrinho de compras
+          Carrinho de Compras
         </Link>
         <h2>detalhes do produtos</h2>
         {detail

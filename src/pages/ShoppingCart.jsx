@@ -12,6 +12,13 @@ export default class ShoppingCart extends Component {
     });
   }
 
+  handleDelete = ({ target: { id } }) => {
+    const { products } = this.state;
+    this.setState({
+      products: products.filter((product) => id !== product.title),
+    });
+  };
+
   render() {
     const { products } = this.state;
     return (
@@ -27,6 +34,14 @@ export default class ShoppingCart extends Component {
           products.map((item, i) => (
             <div key={ i }>
               <CartItem obj={ item } />
+              <button
+                data-testid="remove-product"
+                type="button"
+                id={ item.title }
+                onClick={ this.handleDelete }
+              >
+                Excluir
+              </button>
             </div>
           ))
         )}

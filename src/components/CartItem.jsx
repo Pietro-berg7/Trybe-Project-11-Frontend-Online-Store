@@ -6,6 +6,21 @@ export default class CartItem extends Component {
     quantity: 1,
   };
 
+  increaseButton = () => {
+    this.setState((prevState) => ({
+      quantity: prevState.quantity + 1,
+    }));
+  };
+
+  decreaseButton = () => {
+    const { quantity } = this.state;
+    if (quantity >= 2) {
+      this.setState((prevState) => ({
+        quantity: prevState.quantity - 1,
+      }));
+    }
+  };
+
   render() {
     const { obj } = this.props;
     const { quantity } = this.state;
@@ -15,9 +30,21 @@ export default class CartItem extends Component {
         <img src={ obj.thumbnail } alt={ obj.title } />
         <p>{`R$ ${obj.price}`}</p>
         <div>
-          <button type="button">+</button>
+          <button
+            type="button"
+            data-testid="product-increase-quantity"
+            onClick={ this.increaseButton }
+          >
+            +
+          </button>
           <p data-testid="shopping-cart-product-quantity">{`${quantity}`}</p>
-          <button type="button">-</button>
+          <button
+            type="button"
+            data-testid="product-decrease-quantity"
+            onClick={ this.decreaseButton }
+          >
+            -
+          </button>
         </div>
       </div>
     );

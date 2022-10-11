@@ -25,3 +25,4 @@ export async function getProductById(id) {
   const json = await data.json();
   return json;
 }
+// https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}
