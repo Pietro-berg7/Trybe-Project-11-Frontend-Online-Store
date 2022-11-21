@@ -1,13 +1,19 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Boas-vindas ao repositório do projeto Front-end Online Store!
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+<summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+  Neste projeto foi criada uma versão simplificada, sem persistência no banco de dados, de uma **loja online**, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas em um quadro _Kanban_, em um cenário próximo ao do mercado de trabalho.
+  
+  A partir dessas demandas, foi desenvolvida uma aplicação em que pessoas usuárias poderão:
+  - Buscar produtos por termos e categorias a partir da _API do Mercado Livre_;
+  - Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;
+  - Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações e;
+  - Simular a finalização da compra dos itens selecionados.
+
+  <summary><strong>:memo: Habilidades</strong></summary> <br />
+
+  * Entender o que são Métodos Ágeis;
+  * Entender o que é Kanban;
+  * Entender o que é Scrum;
+  * Trabalhar em equipes utilizando Kanban ou Scrum de maneira eficaz;
+  * Praticar todas as habilidades desenvolvidas até agora no módulo de Front-end.
